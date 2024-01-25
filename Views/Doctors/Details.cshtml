@@ -1,0 +1,29 @@
+﻿@model eHealth.Models.Doctor
+
+@{
+    string doctorFullName = Model.firstName + Model.lastName;
+    ViewData["Title"] = doctorFullName;
+}
+<div class="d-flex justify-content-between">
+    <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" asp-action="Index" role="button">Back to List</a>
+    <a class="btn btn-outline-primary" asp-action="Modify" asp-route-id="@Model.id" role="button">Modify</a>
+</div>
+
+<div class="bg-light rounded-4 p-4 mt-4 flex-row d-flex gap-4 ">
+    <div class="overflow-hidden rounded-circle flex-column justify-content-center align-content-center" style="height: 150px; width: 150px; max-height: 150px; max-width: 150px;">
+        
+
+    </div>
+    <div>
+
+        <h1>
+            @Html.DisplayFor(model => model.firstName) @Html.DisplayFor(model => model.lastName)
+        </h1>
+        <div>
+            <h5>INAMI</h5>
+            <p>@Html.DisplayFor(model => model.inami)</p>
+        </div>
+    </div>
+</div>
+
+

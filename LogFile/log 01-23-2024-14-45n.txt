@@ -1,0 +1,3 @@
+The action Index in Doctors controller started, event fired: OnActionExecuting
+The action Index in Doctors controller finished, event fired: OnActionExecuted
+The action Index in Doctors controller has the followinf viewData: , event fired: OnResultExecuted

@@ -1,0 +1,43 @@
+﻿@using eHealth.Models;
+@model eHealth.Models.Doctor;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Modify doctor";
+}
+
+<div class=" border-1 border-light border bg-light m-auto" style="width: 560px; border-radius: 8px;">
+    <h1 class="my-3 text-center">Modify doctor profile</h1>
+    <form method="post" enctype="multipart/form-data" asp-action="Create" class="pt-3">
+        <div class="form-field px-3 mb-3">
+            <label asp-for="firstName" class="d-block mb-1"></label>
+            <input asp-for="firstName" class="d-block w-100"/>
+            <span asp-validation-for="firstName"></span>
+        </div>
+        <div class="form-field px-3 mb-3">
+            <label asp-for="lastName" class="d-block mb-1"></label>
+            <input asp-for="lastName" class="d-block w-100" />
+            <span asp-validation-for="lastName"></span>
+        </div>
+        <div class="form-field px-3 mb-3">
+            <label asp-for="inami" class="d-block mb-1"></label>
+            <input asp-for="inami" class="d-block w-100" />
+            <span asp-validation-for="inami"></span>
+        </div>
+        <div class="form-field px-3 mb-3">
+            <label asp-for="birthDate" class="d-block mb-1"></label>
+            <input asp-for="birthDate" class="d-block w-100" type="date" />
+            <span asp-validation-for="birthDate"></span>
+        </div>
+        <div class="form-field px-3 mb-3">
+            <label asp-for="profilePicture" class="d-block mb-1"></label>
+            <input asp-for="profilePicture" class="d-block w-100" type="file" />
+            <span asp-validation-for="profilePicture"></span>
+        </div>
+        <div class="form-field p-3 d-flex gap-3" style="">
+            <a class="btn btn-outline-dark btn-lg w-100" asp-action="Details" asp-route-id="@Model.id">Cancel</a>
+            <input type="submit" value="Modify" class="btn btn-primary btn-lg w-100" />
+        </div>
+    </form>
+</div>

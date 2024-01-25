@@ -1,0 +1,41 @@
+﻿@model IEnumerable<eHealth.Models.Doctor>
+
+@{
+    ViewData["Title"] = "Doctors";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Doctors</h1>
+    <a asp-action="Create" class="btn btn-primary d-inline h-">Add Doctor</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                INAMI
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.firstName)
+                    @Html.DisplayFor(modelItem => item.lastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.inami)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
