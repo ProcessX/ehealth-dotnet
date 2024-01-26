@@ -25,9 +25,9 @@ namespace eHealth.Models
         [NotMapped]
         [Display(Name = "Profile picture")]
         public IFormFile profilePicture { get; set; }
-        public string imageName { get; set;}
-        public byte[]? imageFile { get; set; }
-        public string imageMimeType { get; set; }
+        public string imageName { get; set; } = "";
+        public byte[]? imageFile { get; set; } = new byte[] { };
+        public string imageMimeType { get; set; } = "";
 
         public User()
         {
