@@ -6,13 +6,26 @@
 }
 <div class="d-flex justify-content-between">
     <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" asp-action="Index" role="button">Back to List</a>
-    <a class="btn btn-outline-primary" asp-action="Modify" asp-route-id="@Model.id" role="button">Modify</a>
+    <div>
+        <a class="btn btn-outline-primary" asp-action="Modify" asp-route-id="@Model.id" role="button">Modify</a>
+        <a asp-action="Delete" asp-route-id="@Model.id" class="btn btn-danger">Delete</a>
+    </div>
 </div>
 
 <div class="bg-light rounded-4 p-4 mt-4 flex-row d-flex gap-4 ">
     <div class="overflow-hidden rounded-circle flex-column justify-content-center align-content-center" style="height: 150px; width: 150px; max-height: 150px; max-width: 150px;">
-        
-
+        @if (Model.imageName != null)
+        {
+            <div class="photo-display">
+                <img class="w-100 d-block" src="@Url.Action("GetImage", "Doctors", new { id = Model.id })" />
+            </div>
+        }
+        else
+        {
+            <div class="photo-display">
+                <img class="photo-display-img" src="./img/placeholder.jpg" alt="placeholder"/>
+            </div>
+        }
     </div>
     <div>
 
@@ -26,5 +39,4 @@
     </div>
 
 </div>
-<a asp-action="Delete" asp-route-id="@Model.id" class="btn btn-danger">Delete</a>
 

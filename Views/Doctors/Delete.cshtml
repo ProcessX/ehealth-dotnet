@@ -11,7 +11,21 @@
     <h1 class="my-3 text-center">Delete doctor</h1>
     <form method="post" enctype="multipart/form-data" asp-action="Delete" class="pt-3">
         <div class="form-field m-3 p-3 pb-1 text-center" style="background-color: #e8e9eb; border-radius: 8px;">
-            <h3 class="mb-4">You are trying to delete doctor: <b>@Model.firstName @Model.lastName</b></h3>
+            <div class="overflow-hidden rounded-circle flex-column justify-content-center align-content-center m-auto" style="height: 150px; width: 150px; max-height: 150px; max-width: 150px;">
+                @if (Model.imageName != null)
+                {
+                    <div class="photo-display">
+                        <img class="w-100 d-block" src="@Url.Action("GetImage", "Doctors", new { id = Model.id })" />
+                    </div>
+                }
+                else
+                {
+                    <div class="photo-display">
+                        <img class="photo-display-img" src="./img/placeholder.jpg" alt="placeholder" />
+                    </div>
+                }
+            </div>
+            <h3 class="mb-4 mt-4">You are trying to delete this doctor: </br> <b>@Model.firstName @Model.lastName</b></h3>
             <p>Are you sure ? This decision is final.</p>
         </div>
         <div class="form-field p-3 d-flex gap-3" style="">
