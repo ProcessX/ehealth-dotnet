@@ -1,0 +1,19 @@
+﻿<tr>
+    <td class="patientname">
+        <img src="@Url.Action("GetImage", new {patientname = ViewBag.CurrentPatient.FullName})" class="round-image" />
+        @ViewBag.CurrentPatient.FullName
+    </td>
+    <td>
+        Homme
+    </td>
+    <td>
+        <a asp-action="UploadFokder">
+            Upload Folder
+        </a>
+    </td>
+    <td>
+        <a asp-action="ShowDataForPatient" asp-route-patientname="@ViewBag.CurrentPatient.FullName">
+            See details
+        </a>
+    </td>
+</tr>

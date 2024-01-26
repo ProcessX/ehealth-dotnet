@@ -1,0 +1,123 @@
+﻿@model eHealth.Models.Patient
+
+@{
+    string patientFullName = Model.FullName;
+    ViewData["Title"] = patientFullName;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Patient Details</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+</head>
+<body class="patient-details-container">
+    <div class="patient-details">
+        <h1>Information Générale</h1>
+        <div class="general-info">
+            <img src="@Url.Action("GetImage", new { patientname = patientFullName })" class="patient-photo" />
+            <div class="details">
+                <div class="key-value-detail">
+                    <p class="key-detail">Nom Complet:</p>
+                    <p class="value-detail">@Html.DisplayFor(model => model.FullName)</p>
+                </div>
+                <div class="key-value-detail">
+                    <p class="key-detail">Age:</p>
+                    <p class="value-detail">@Html.DisplayFor(model => model.Age)</p>
+                </div>
+                <div class="key-value-detail">
+                    <p class="key-detail">Description:</p>
+                    <p class="value-detail">@Html.DisplayFor(model => model.Description)</p>
+                </div>
+                <div class="key-value-detail">
+                    <p class="key-detail">Date de naissance:</p>
+                    <p class="value-detail">@Html.DisplayFor(model => model.BirthDate)</p>
+                </div>
+                <div class="key-value-detail">
+                    <p class="key-detail">Gender:</p>
+                    <p class="value-detail">@Html.DisplayFor(model => model.Gender)</p>
+                </div>
+                <div class="key-value-detail">
+                    <p class="key-detail">Contact:</p>
+                    <p class="value-detail">@Html.DisplayFor(model => model.Contact)</p>
+                </div>
+                <div class="key-value-detail">
+                    <p class="key-detail">InsuranceNumber:</p>
+                    <p class="value-detail">@Html.DisplayFor(model => model.InsuranceNumber)</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Liste des Rendez-vous</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Numero</th>
+                    <th>Date</th>
+                    <th>Heure de Début</th>
+                    <th>Heure de Fin</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>13/02/2024</td>
+                        <td>09:00</td>
+                        <td>09:45</td>
+                        <td>
+                            <button >Accepter</button>
+                            <button >Décliner</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>13/07/2024</td>
+                        <td>11:00</td>
+                        <td>11:45</td>
+                        <td>
+                            <button >Accepter</button>
+                            <button >Décliner</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>03/09/2024</td>
+                        <td>14:00</td>
+                        <td>16:45</td>
+                        <td>
+                            <button>Accepter</button>
+                            <button>Décliner</button>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+
+        <h2>Historique du Patient</h2>
+        <div class="medical-history">
+            <div class="key-value-detail">
+                <p class="key-detail">Conditions Chroniques:</p>
+                <p class="value-detail">@Html.DisplayFor(model => model.ChronicConditions)</p>
+            </div>
+            <div class="key-value-detail">
+                <p class="key-detail">Antécédents Médicaux:</p>
+                <p class="value-detail">@Html.DisplayFor(model => model.PastMedicalHistory)</p>
+            </div>
+            <div class="key-value-detail">
+                    <p class="key-detail">Médicaments:</p>
+                <p class="value-detail">@Html.DisplayFor(model => model.Medications)</p>
+                </div>
+            <div class="key-value-detail">
+                <p class="key-detail">Antécédents Familiaux:</p>
+                <p class="value-detail">@Html.DisplayFor(model => model.FamilyMedicalHistory)</p>
+            </div>
+            <div class="key-value-detail">
+                <p class="key-detail">Histoire Sociale:</p>
+                <p class="value-detail">@Html.DisplayFor(model => model.SocialHistory)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

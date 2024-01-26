@@ -1,0 +1,55 @@
+﻿@model IEnumerable<eHealth.Models.Patient>
+
+@{
+    ViewData["Title"] = "Patients";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowPatients</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+</head>
+<body>
+    <div class="patients-list-header">
+        <h1>Patients list</h1>
+        <button>Add new Patient</button>
+    </div>
+
+    <table class="patients-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Medical Folder</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="patientname">
+                        <img src="@Url.Action("GetImage", new {patientname = @item.FullName})" class="round-image" />
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td>
+                        Homme
+                    </td>
+                    <td>
+                        <a asp-action="UploadFokder">
+                            Upload Folder
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-action="ShowDataForPatient" asp-route-patientname="@item.FullName">
+                            See details
+                        </a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</body>
+</html>

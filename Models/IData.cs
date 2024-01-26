@@ -11,5 +11,9 @@ namespace eHealth.Models
         List<Doctor> doctors { get; set; }
         List<Doctor> doctorsInitializeData();
         Doctor getDoctorById(int? id);
+
+        List<Patient> patients { get; set; }
+        List<Patient> patientsInitializeData();
+        Patient GetPatientByName(string? patientname);
     }
 }

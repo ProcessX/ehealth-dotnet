@@ -13,9 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddTransient<IDoctorRepository, DoctorRepository>();
+builder.Services.AddTransient<IPatientRepository, PatientRepository>();
 builder.Services.AddScoped<LogActionFiltersAttribute>();
 string connectionString = "Data Source=doctors.db";
 builder.Services.AddDbContext<DoctorContext>(options => options.UseSqlite(connectionString));
+builder.Services.AddDbContext<PatientContext>(options => options.UseSqlite(connectionString));
 
 
 builder.Services.AddControllersWithViews();
@@ -42,5 +44,11 @@ app.MapControllerRoute(
     pattern: "{controller}/{action}/{name}",
     constraints: new { name = "[A-Za-z]+" },
     defaults: new { controller = "Doctors", action = "Index", name = "Lucas G." });
+
+app.MapControllerRoute(
+    name: "PatientsRouter",
+    pattern: "{controller}/{action}/{name}",
+    constraints: new { name = "[A-Za-z]+" },
+    defaults: new { controller = "Patients", action = "Index", name = "Bilal F." });
 
 app.Run();

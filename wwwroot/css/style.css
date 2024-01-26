@@ -1,0 +1,255 @@
+﻿html {
+    background-image: linear-gradient(rgba(47,79,79,0.75),rgba(47,79,79,0.75)), url('../images/background.PNG');
+    background-position: center center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center center;
+    color: yellowgreen;
+}
+
+h1 {
+    opacity: 0.8;
+    color: yellowgreen;
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 130px;
+}
+
+span img {
+    width: 213px;
+    height: 127px;
+}
+
+.key-value-detail {
+    display: flex;
+}
+
+.key-detail {
+    width: 300px;
+}
+
+.value-detail {
+    padding-left: 10px;
+    color: black;
+    text-shadow: 1px 1px 2px black !important;
+    width: 700px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    min-height: 320px;
+}
+
+.patient {
+    border-color: rgba(0,255,255,0.5);
+    background-color: rgba(218 71 6,0.5);
+    border-width: 6px;
+    border-style: outset;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.round-image {
+    border-radius: 50%; /* This will make the image round */
+    max-width: 100px; /* You can adjust this value to your preference */
+    height: auto; /* This will maintain the aspect ratio of the image */
+    border: 3px solid #fff; /* Optional: if you want a border around the image */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Optional: if you want a shadow effect */
+}
+
+.round-image-detail {
+    border-radius: 50%; /* This will make the image round */
+    max-width: 300px; /* You can adjust this value to your preference */
+    height: auto; /* This will maintain the aspect ratio of the image */
+    border: 3px solid #fff; /* Optional: if you want a border around the image */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Optional: if you want a shadow effect */
+}
+
+.patients-table {
+    width: 1200px !important;
+}
+    .patients-table th,
+    .patients-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+.patients-table th {
+}
+
+.round-image {
+    border-radius: 50%;
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed, should be the same as width for a perfect circle */
+    object-fit: cover; /* This will ensure the image covers the area without distortion */
+    border: 3px solid #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    margin-right: 10px
+}
+
+.patientname {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+h2, h3, p {
+    color: yellowgreen;
+    text-shadow: 1px 1px 2px black, 0 0 3px blue, 0 0 3px darkblue;
+    font-family: Arial;
+}
+
+h3 {
+    margin-top: 16px;
+}
+
+a {
+    font-family: Arial;
+    margin: 16px 0;
+}
+
+a:link {
+    color: yellowgreen;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+a:visited {
+    color: yellowgreen;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+a:hover {
+    color: yellowgreen;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+a:active {
+    color: yellowgreen;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.patient-details-container {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+.patient-details {
+    width: 80%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: block;
+}
+
+.patient-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    margin-left: 140px;
+}
+
+.general-info {
+    margin-left: 240px;
+}
+
+.details {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.details p {
+   margin: 0 0 10px;
+}
+
+.medical-history p {
+    background: #e7e7e7;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+
+
+/* This is for the action buttons in the appointments table */
+.accept-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.decline-button {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    .patient-details {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .details {
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    height: 50px;
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.patients-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.patients-table {
+    width: 1200px !important;
+}
