@@ -11,8 +11,8 @@ using eHealth.Data;
 namespace eHealth.Migrations
 {
     [DbContext(typeof(DoctorContext))]
-    [Migration("20240125081204_addMigration")]
-    partial class addMigration
+    [Migration("20240126140958_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,8 +60,9 @@ namespace eHealth.Migrations
                         new
                         {
                             id = 1,
-                            birthDate = new DateOnly(2024, 1, 25),
+                            birthDate = new DateOnly(2024, 1, 26),
                             firstName = "Shawna",
+                            imageFile = new byte[0],
                             imageMimeType = "image/jpeg",
                             imageName = "shawna_trejo.jpg",
                             inami = "7055",
@@ -70,8 +71,9 @@ namespace eHealth.Migrations
                         new
                         {
                             id = 2,
-                            birthDate = new DateOnly(2024, 1, 25),
+                            birthDate = new DateOnly(2024, 1, 26),
                             firstName = "Rod",
+                            imageFile = new byte[0],
                             imageMimeType = "image/jpeg",
                             imageName = "rod_hale.jpg",
                             inami = "4478",
@@ -80,8 +82,9 @@ namespace eHealth.Migrations
                         new
                         {
                             id = 3,
-                            birthDate = new DateOnly(2024, 1, 25),
+                            birthDate = new DateOnly(2024, 1, 26),
                             firstName = "Christopher",
+                            imageFile = new byte[0],
                             imageMimeType = "image/jpeg",
                             imageName = "christopher_green.jpg",
                             inami = "588",
@@ -90,8 +93,9 @@ namespace eHealth.Migrations
                         new
                         {
                             id = 4,
-                            birthDate = new DateOnly(2024, 1, 25),
+                            birthDate = new DateOnly(2024, 1, 26),
                             firstName = "Debra",
+                            imageFile = new byte[0],
                             imageMimeType = "image/jpeg",
                             imageName = "debra_meyer.jpg",
                             inami = "9077",

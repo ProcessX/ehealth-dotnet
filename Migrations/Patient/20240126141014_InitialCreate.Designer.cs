@@ -10,7 +10,7 @@ using eHealth.Data;
 namespace eHealth.Migrations.Patient
 {
     [DbContext(typeof(PatientContext))]
-    [Migration("20240126114024_InitialCreate")]
+    [Migration("20240126141014_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

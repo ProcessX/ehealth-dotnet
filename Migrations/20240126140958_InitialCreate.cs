@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace eHealth.Migrations
 {
     /// <inheritdoc />
-    public partial class addMigration : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -37,10 +37,10 @@ namespace eHealth.Migrations
                 columns: new[] { "id", "birthDate", "firstName", "imageFile", "imageMimeType", "imageName", "inami", "lastName" },
                 values: new object[,]
                 {
-                    { 1, new DateOnly(2024, 1, 25), "Shawna", null, "image/jpeg", "shawna_trejo.jpg", "7055", "Trejo" },
-                    { 2, new DateOnly(2024, 1, 25), "Rod", null, "image/jpeg", "rod_hale.jpg", "4478", "Hale" },
-                    { 3, new DateOnly(2024, 1, 25), "Christopher", null, "image/jpeg", "christopher_green.jpg", "588", "Green" },
-                    { 4, new DateOnly(2024, 1, 25), "Debra", null, "image/jpeg", "debra_meyer.jpg", "9077", "Meyers" }
+                    { 1, new DateOnly(2024, 1, 26), "Shawna", new byte[0], "image/jpeg", "shawna_trejo.jpg", "7055", "Trejo" },
+                    { 2, new DateOnly(2024, 1, 26), "Rod", new byte[0], "image/jpeg", "rod_hale.jpg", "4478", "Hale" },
+                    { 3, new DateOnly(2024, 1, 26), "Christopher", new byte[0], "image/jpeg", "christopher_green.jpg", "588", "Green" },
+                    { 4, new DateOnly(2024, 1, 26), "Debra", new byte[0], "image/jpeg", "debra_meyer.jpg", "9077", "Meyers" }
                 });
         }
 
