@@ -9,6 +9,7 @@ using eHealth.Models;
 using eHealth.Repositories;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace eHealth.Controllers
 {
@@ -61,23 +62,39 @@ namespace eHealth.Controllers
         }
 
         [HttpPost, ActionName("Modify")]
-        public async Task<IActionResult> ModifyPost(int id)
+        public async Task<IActionResult> ModifyPost(Doctor doctor)
         {
-            var doctorToUpdate = _repository.GetDoctorById(id);
+            var doctorToUpdate = _repository.GetDoctorById(doctor.id);
+
             bool isUpdated = await TryUpdateModelAsync<Doctor>(
-                                doctorToUpdate,
-                                "",
-                                d => d.firstName,
-                                d => d.lastName,
-                                d => d.inami,
-                                d => d.birthDate);
+                                    doctorToUpdate,
+                                    "",
+                                    d => d.firstName,
+                                    d => d.lastName,
+                                    d => d.inami,
+                                    d => d.birthDate);
+            /*
             if (isUpdated)
             {
                 _repository.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            return View(doctorToUpdate);
+            */
+
+            try
+            {
+                _repository.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+
+                return View(doctor);
+            }
+
+
         }
+        
 
         [HttpGet]
         public IActionResult Delete(int id)

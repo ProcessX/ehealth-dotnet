@@ -53,7 +53,15 @@ namespace eHealth.Repositories
         {
             _context.SaveChanges();
         }
-
-
+        /*
+        public async Task<bool> ModifyDoctor(Doctor doctor)
+        {
+            var doctorToUpdate = _context.Doctors.SingleOrDefault(d => d.id == doctor.id);
+            doctorToUpdate.firstName = doctor.firstName;
+            _context.Update(doctorToUpdate);
+            var result = await _context.SaveChangesAsync();
+            return false;
+        }
+        */
     }
 }
