@@ -59,5 +59,42 @@ namespace eHealth.Controllers
             if(doctor == null) { return NotFound(id); }
             return View(doctor);
         }
+
+        [HttpPost, ActionName("Modify")]
+        public async Task<IActionResult> ModifyPost(int id)
+        {
+            var doctorToUpdate = _repository.GetDoctorById(id);
+            bool isUpdated = await TryUpdateModelAsync<Doctor>(
+                                doctorToUpdate,
+                                "",
+                                d => d.firstName,
+                                d => d.lastName,
+                                d => d.inami,
+                                d => d.birthDate);
+            if (isUpdated)
+            {
+                _repository.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(doctorToUpdate);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var doctor = _repository.GetDoctorById(id);
+            if (doctor == null)
+            {
+                return NotFound();
+            }
+            return View(doctor);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            _repository.DeleteDoctor(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

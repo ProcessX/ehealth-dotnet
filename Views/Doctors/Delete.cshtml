@@ -1,0 +1,22 @@
+﻿@using eHealth.Models;
+@model eHealth.Models.Doctor;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Delete doctor";
+}
+
+<div class=" border-1 border-light border bg-light m-auto" style="width: 560px; border-radius: 8px;">
+    <h1 class="my-3 text-center">Delete doctor</h1>
+    <form method="post" enctype="multipart/form-data" asp-action="Delete" class="pt-3">
+        <div class="form-field m-3 p-3 pb-1 text-center" style="background-color: #e8e9eb; border-radius: 8px;">
+            <h3 class="mb-4">You are trying to delete doctor: <b>@Model.firstName @Model.lastName</b></h3>
+            <p>Are you sure ? This decision is final.</p>
+        </div>
+        <div class="form-field p-3 d-flex gap-3" style="">
+            <a class="btn btn-outline-dark btn-lg w-100" asp-action="Details" asp-route-id="@Model.id">Cancel</a>
+            <input type="submit" value="Delete" class="btn btn-danger btn-lg w-100" />
+        </div>
+    </form>
+</div>

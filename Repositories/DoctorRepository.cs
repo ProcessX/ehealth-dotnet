@@ -24,7 +24,7 @@ namespace eHealth.Repositories
 
         public Doctor GetDoctorById(int id)
         {
-            return _context.Doctors.SingleOrDefault(c => c.id == id);
+            return _context.Doctors.SingleOrDefault(d => d.id == id);
         }
 
         public void CreateDoctor(Doctor doctor)
@@ -44,7 +44,7 @@ namespace eHealth.Repositories
 
         public void DeleteDoctor(int id)
         {
-            var doctor = _context.Doctors.SingleOrDefault(c => c.id == id);
+            var doctor = _context.Doctors.SingleOrDefault(d => d.id == id);
             _context.Doctors.Remove(doctor);
             _context.SaveChanges();
         }
