@@ -78,6 +78,7 @@ span img {
 .patients-table {
     width: 1200px !important;
 }
+
     .patients-table th,
     .patients-table td {
         border: 1px solid #ddd;
@@ -85,8 +86,8 @@ span img {
         text-align: left;
     }
 
-.patients-table th {
-}
+    .patients-table th {
+    }
 
 .round-image {
     border-radius: 50%;
@@ -106,7 +107,6 @@ span img {
 
 h2, h3, p {
     color: yellowgreen;
-    text-shadow: 1px 1px 2px black, 0 0 3px blue, 0 0 3px darkblue;
     font-family: Arial;
 }
 
@@ -119,25 +119,21 @@ a {
     margin: 16px 0;
 }
 
-a:link {
-    color: yellowgreen;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-}
+    a:link {
+        color: yellowgreen;
+    }
 
-a:visited {
-    color: yellowgreen;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-}
+    a:visited {
+        color: yellowgreen;
+    }
 
-a:hover {
-    color: yellowgreen;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-}
+    a:hover {
+        color: yellowgreen;
+    }
 
-a:active {
-    color: yellowgreen;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-}
+    a:active {
+        color: yellowgreen;
+    }
 
 .patient-details-container {
     font-family: 'Arial', sans-serif;
@@ -174,9 +170,9 @@ a:active {
     vertical-align: top;
 }
 
-.details p {
-   margin: 0 0 10px;
-}
+    .details p {
+        margin: 0 0 10px;
+    }
 
 .medical-history p {
     background: #e7e7e7;
@@ -240,9 +236,9 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    opacity: 0.8;
-}
+    button:hover {
+        opacity: 0.8;
+    }
 
 .patients-list-header {
     display: flex;
